@@ -182,7 +182,7 @@ const mfaAuthenticate = (mfatoken, callback) => {
 
 }
 
-const removeLemoProfile = (callback) => {
+const removeLemoProfile = (profile, callback) => {
   try {
     removeCredentialsFile();
     state.set(Object.assign({},

@@ -24,11 +24,11 @@ const StateInitialValues = {
   secondaryCredentials: {},
   refreshManager: {
     last_refresh: 1527147091611,
-    refresh_interval: 3600 /* once every hour */
+    refresh_interval: 600 /* once 10 mins */
   }
 }
 
-const credential_check_interval = 300; /* once every 5 mins */
+const credential_check_interval = 60; /* once every 1 min */
 
 module.exports = {
   application_data_dir,

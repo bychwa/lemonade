@@ -17,6 +17,7 @@ const {
 const winURL = `file://${__dirname}/app/index.html`;
 
 prepareFileSystem();
+require(__dirname + '/app/js/session-manager')();
 
 app.on('ready', () => {
   win = new BrowserWindow({
@@ -26,7 +27,7 @@ app.on('ready', () => {
     frame: true,
     resizable: false,
     useContentSize: true,
-    width: 520,
+    width: 540,
     height: 820
   });
   win.loadURL(winURL)
@@ -101,30 +102,20 @@ app.on('ready', () => {
       },
       {
         label: 'Profiles',
-        submenu: [{
-          label: 'offline',
-          type: 'radio',
-          checked: true,
-          click: () => {
-            removeProfile((err, success) => {
-              if (err) {
-                win.show();
-              }
-            });
-          }
-        }].concat(
-          (getProfiles() || []).map(p => ({
+        submenu: (getProfiles() || [])
+          .map(p => ({
             label: p.name,
             type: 'radio',
             checked: p.active,
             click: () => {
-              changeProfile(p.name, (err, success) => {
+              const action = p.name === 'offline' ? removeProfile : changeProfile;
+              action(p.name, (err, success) => {
                 if (err) {
                   win.show();
                 }
               });
             }
-          })))
+          }))
       },
       {
         label: 'Quit',

@@ -10,12 +10,11 @@ const {
 
 const refresh_credentials = () => {
 
-  console.log('refreshing credentials...')
   refreshCredentials((err, success) => {
     if(err){
-      console.log('refreshing credentials... Failed!', err.code);
+      console.log(new Date(),'refreshing credentials... Failed!', err.code);
     }else{
-      console.log('refreshing credentials... Done!');
+      console.log(new Date(), 'refreshing credentials... Done!');
     }
   });
 };

@@ -28,7 +28,7 @@ const getProfiles = () => {
       active: c === selectedProf
     })
     return p;
-  }, []);
+  }, [{ name: 'offline', active: ('offline' === selectedProf) }]);
 };
 
 const getMenus = () => {

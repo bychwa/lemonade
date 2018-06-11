@@ -5,8 +5,6 @@ const cache = require(__dirname + '/js/utils/cache');
 const state = require(__dirname + '/js/utils/state');
 const constants = require(__dirname + '/js/utils/constants');
 
-require(__dirname + '/js/session-manager')();
-
 const {
   getProfiles,
   removeProfile,
@@ -20,7 +18,7 @@ const {
 
 let activeProfile = getProfiles().find(p => p.active);
 
-cache.put('currentProfile', activeProfile && activeProfile.name || 'none');
+cache.put('currentProfile', activeProfile && activeProfile.name || 'offline');
 cache.del('application_error')
 
 const activeMenu = getMenus().find(m => m.active);
@@ -30,7 +28,7 @@ function onChangeView(view) {
   render();
 };
 function removeCredentials(profile) {
-  removeProfile((err, success)=>{
+  removeProfile(profile, (err, success)=>{
     if(!err || success){
       cache.del('application_error');
       cache.put('currentProfile', profile);
@@ -42,7 +40,9 @@ function removeCredentials(profile) {
   
 };
 function onChangeProfile(profile) {
-  changeProfile(profile, (err, success) => {
+  $("#loading-view").show();
+  const action = profile === 'offline' ? removeCredentials : changeProfile;
+  action(profile, (err, success) => {
     if (!err && success) {
       cache.del('application_error');
       cache.put('currentProfile', profile);
@@ -54,12 +54,14 @@ function onChangeProfile(profile) {
 };
 
 function save_configs() {
+  $("#loading-view").show();
   const newConfigs = $('#config-editor').val();
   saveConfigs(newConfigs);
   render();
 };
 
 function submit_mfa() {
+  $("#loading-view").show();
   const mfa = $("#mfa_code").val();
   if(mfa && mfa.trim().length === 6 && mfa.trim().match(/^\d+$/)){
       mfaAuth(mfa, (err, success) => {
@@ -119,22 +121,16 @@ function render() {
 
   const profilesView = profiles.reduce((pv, profile) => {
     const active = (profile.name === cache.get('currentProfile'));
+    const messageColor = active ? profile.name === 'offline' ? 'red': 'green': '' 
     return `
       ${pv}
-      <div onClick="onChangeProfile('${profile.name}')" class='ui profile icon message ${active ? 'green': '' }'>
-        <i class='square ${active ? '': 'outline' } icon'></i>
+      <div onClick="onChangeProfile('${profile.name}')" class='ui profile small icon message ${messageColor}'>
+        <i class='square ${active ? '': 'outline' } icon mini'></i>
         <div class='content'>
           <div class='header'>${profile.name}</div>
         </div>
       </div>`;
-  }, `
-  <div onClick="removeCredentials('none')" class='ui profile icon message ${cache.get('currentProfile') ==='none' ? 'red': '' }'>
-    <i class='pause circle ${cache.get('currentProfile') ==='none' ? '': 'outline' } icon'></i>
-    <div class='content'>
-      <div class='header'> Offline </div>
-    </div>
-  </div>
-  `);
+  }, ``);
 
   const settingsView = `
     <div class="ui form">
@@ -147,8 +143,6 @@ function render() {
       <button class="ui button" type="submit" onClick="save_configs()">Save Configs</button>
     </div>
   `;
-  
-
   if(lemoState ==='NEEDS_MFA_AUTH') {
     $("#mfa-view").html(mfaView);
     $("#mfa-view").show();
@@ -174,10 +168,9 @@ function render() {
       JSON.stringify(constants.sample_config_file, null, 4);
     $('#config-editor').text(configsText);
   }
-
+  $("#loading-view").hide();
 };
 
 function onDocumentReady() {
   render();
-
 }

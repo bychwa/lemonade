@@ -8,7 +8,6 @@ const { refresh_credentials } = require(__dirname + '/refresher');
 
 const state = require(__dirname + '/../utils/state');
 const dot_aws_dir = `${constants.dot_aws_data_dir}/`;
-
 const postRefresh = ()=>{
   state.set(
     Object.assign({},
@@ -31,7 +30,7 @@ const on_refresh_credentials = () => {
 
 const check_credentials = () => {
   const refreshManager = state.get().refreshManager;
-  const needsRefresh = ((new Date().getTime() - refreshManager.last_refresh) / 1000) > state.get().refreshManager.refresh_interval;
+  const needsRefresh = ((new Date().getTime() - refreshManager.last_refresh) / 1000) - state.get().refreshManager.refresh_interval >= 0;
   if(needsRefresh){
     emmiter.emit('refresh_credentials')
   }

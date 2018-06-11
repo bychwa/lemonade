@@ -17,7 +17,7 @@
       cursor: pointer;
     }
     .mfa-container {
-      padding-top: 60%;
+      padding-top: 55%;
     }
     #config-editor {
       resize: none;
@@ -34,6 +34,9 @@
       <div id="error-view"></div>
       <div class="ui segment" id="main-view"></div>
       <div id="extra-view"></div>
+      <div class="ui active inverted dimmer" id="loading-view">
+        <div class="ui text loader">Loading</div>
+      </div>
   </div>
   <script type="text/javascript">
     $(document).ready(function () {
