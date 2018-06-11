@@ -1,9 +1,9 @@
 # Lemonade
 
-Lemonade is an aws authenticator tool that allows users to get aws credentials for different assumed account roles that are multi-factor (mfa) protected. This credential can be used to make api calls to aws.
+Lemonade is an aws authenticator tool that allows users to get aws credentials for different assumed account roles that are multi-factor (mfa) protected. These credentials can be used to make api calls to aws.
 
-  - aws-sdk api calls
-  - different aws tools
+  - AWS-SDK Api calls
+  - Different aws tools
 
 ### New Features!
   - Select different profiles from the system tray
@@ -14,7 +14,14 @@ Lemonade is an aws authenticator tool that allows users to get aws credentials f
 
 Download an executable file for lemonade from this url page: [lemonade releases](https://github.com/bychwa/lemonade/releases) .
 
+### App Views
+
+| | |
+|:-------------------------:|:-------------------------:|
+|<img align="left" src="https://github.com/bychwa/lemonade/raw/master/docs/tray.png" width="400"/> Menu From Tray icon |<img align="right" src="https://github.com/bychwa/lemonade/raw/master/docs/profiles.png" width="400" /> Hover over profiles to select |
+|<img align="left" src="https://github.com/bychwa/lemonade/raw/master/docs/gui-offline.png" width="400" /> When not using, go offline |<img align="right" src="https://github.com/bychwa/lemonade/raw/master/docs/gui-profile.png" width="400" /> You can pick profile you want |
+|<img src="https://github.com/bychwa/lemonade/raw/master/docs/settings.png" width="400" /> Settings for your credentials |
+
 ### Todos
 
- - Encrypt data store with keychain password when offline
- - Minor bug fixes
+ * Encrypt data store with keychain password when offline
