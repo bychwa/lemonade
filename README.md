@@ -18,9 +18,12 @@ Download an executable file for lemonade from this url page: [lemonade releases]
 
 | | |
 |:-------------------------:|:-------------------------:|
-|<img align="left" src="https://github.com/bychwa/lemonade/raw/master/docs/tray.png" width="400"/> Menu From Tray icon|<img align="right" src="https://github.com/bychwa/lemonade/raw/master/docs/profiles.png" width="400" /> Hover over profiles to select|
-|<img src="https://github.com/bychwa/lemonade/raw/master/docs/settings.png" width="400" /> Settings for your credentials |<img align="right" src="https://github.com/bychwa/lemonade/raw/master/docs/mfa.png" width="400" /> Authenticating with mfa|
-|<img align="left" src="https://github.com/bychwa/lemonade/raw/master/docs/gui-offline.png" width="400" /> When not using, go offline|<img align="right" src="https://github.com/bychwa/lemonade/raw/master/docs/gui-profile.png" width="400" /> You can pick profile you want |
+|<img align="left" src="https://github.com/bychwa/lemonade/raw/master/docs/tray.png" width="400"/>|<img align="right" src="https://github.com/bychwa/lemonade/raw/master/docs/profiles.png" width="400" /> |
+|----: Menu From Tray icon ----:|:---- Hover over profiles to select ----:|
+|<img src="https://github.com/bychwa/lemonade/raw/master/docs/settings.png" width="400" /> |<img align="right" src="https://github.com/bychwa/lemonade/raw/master/docs/mfa.png" width="400" /> |
+|:---- Settings for your credentials ----:|:---- Authenticating with mfa ----:|
+|<img align="left" src="https://github.com/bychwa/lemonade/raw/master/docs/gui-offline.png" width="400" />|<img align="right" src="https://github.com/bychwa/lemonade/raw/master/docs/gui-profile.png" width="400" />|
+|:---- When not using, go offline ----:|:---- You can pick profile you want ----:|
 
 ### Todos
 
