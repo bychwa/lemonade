@@ -153,7 +153,7 @@ const handleError = (error) => {
 };
 
 const mfaAuthenticate = (mfatoken, callback) => {
-  
+
   const profConfigs = _.get(state.get(),'configs.default');
   
   if(profConfigs){
@@ -173,7 +173,7 @@ const mfaAuthenticate = (mfatoken, callback) => {
         callback(err);
       } else {
         savePrimaryCredentials(creds.Credentials);
-        callback(null, creds.Credentials);
+        callback(err, creds.Credentials); 
       }
     });
   }else{
@@ -197,27 +197,31 @@ const removeLemoProfile = (profile, callback) => {
 };
 
 const changeLemoProfile = (profile, callback) => {
-  
-  const profConfigs = getLemoProfiles()[profile];
-  const ROLE_ARN = profConfigs['role_arn'];
-  const ROLE_NAME = profConfigs['role_session_name'];
+  if(!_.isEqual(_.get(state.get(), 'secondaryCredentials.AssumedProfile.RoleName'), profile)){
+    const profConfigs = getLemoProfiles()[profile];
+    const ROLE_ARN = profConfigs['role_arn'];
+    const ROLE_NAME = profConfigs['role_session_name'];
 
-  updateCredentialsFile(
-    convertCredentials(state.get().primaryCredentials)
-  );
-
-  assumeRole(ROLE_NAME, ROLE_ARN, (err, assumed) => {
-    if (err) {
-      console.log('assume - err', err.code);
-      handleError(err);
-      callback(err);
-    } else {
-      console.log('assumed role', profile);
-      updateCredentialsFile(convertCredentials(assumed.Credentials));
-      saveSecondaryCredentials(profile, assumed);
-      callback(null, true);
-    }
-  });
+    updateCredentialsFile(
+      convertCredentials(state.get().primaryCredentials)
+    );
+    
+    assumeRole(ROLE_NAME, ROLE_ARN, (err, assumed) => {
+      if (err) {
+        console.log('assume - err', err.code);
+        handleError(err);
+        callback(err);
+      } else {
+        console.log('assumed role', profile);
+        updateCredentialsFile(convertCredentials(assumed.Credentials));
+        saveSecondaryCredentials(profile, assumed);
+        callback(null, true);
+      }
+    });
+  }else{
+    console.log('no need');
+    callback(null, true);
+  }
 }
 module.exports = {
   getLemoProfiles,
