@@ -5,10 +5,14 @@ Lemonade is an aws authenticator tool that allows users to get aws credentials f
   - AWS-SDK Api calls
   - Different aws tools
 
+You can read more about how lemonade works in this article: [medium article](https://medium.com/@jaxonisack/aws-mfa-account-protection-is-awesome-but-not-so-much-for-api-calls-875b9be2070f) .
+
+
 ### New Features!
   - Select different profiles from the system tray
   - Go offline when you dont want any profiles to be active
   - Much longer expiration of the primary session. Currently 32hrs
+  - Prompt to update when new version of the app is published
 
 ### Installation
 
