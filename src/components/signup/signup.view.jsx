@@ -14,6 +14,7 @@ export default class Signup extends React.Component {
         this.handleOnChange = this.handleOnChange.bind(this);
         this.onToogleMfa = this.onToogleMfa.bind(this);
         this.handleItemClick = this.handleItemClick.bind(this);
+        this.onSubmitRegister = this.onSubmitRegister.bind(this);
     }
     onToogleMfa(e, data){
         this.setState({
@@ -26,6 +27,14 @@ export default class Signup extends React.Component {
         });
     }
     handleItemClick(e, data) {
+    }
+    onSubmitRegister(){
+        this.props.saveRootUser({
+            aws_default_region: this.state.aws_default_region,
+            aws_access_key_id: this.state.aws_access_key_id,
+            aws_secret_access_key: this.state.aws_secret_access_key,
+            mfa_serial: this.state.mfa_serial
+        });
     }
     render() {
         const regionOptions = [
@@ -50,7 +59,7 @@ export default class Signup extends React.Component {
                         }
                     </Form>
                     <Divider />
-                    <Button primary size='huge'  content='Submit' fluid />
+                    <Button primary size='huge'  content='Submit' onClick={this.onSubmitRegister} fluid />
                     <Divider />
                 </Container>
             </Container>

@@ -13,7 +13,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      page: 'main',
       activeMenuItem: 'profiles'
     };
     console.log(this.props.addTodo('hello'));
@@ -27,14 +26,15 @@ class App extends Component {
   render() {
     const activeItem = this.state.activeMenuItem;
     const menuItems = ['profiles', 'settings'];
-    if(this.state.page === 'register') {
+    const view = this.props.app.view;
+    if(view === 'register') {
       return (
         <Container padded='true' className='App'>
           <Signup/>
         </Container>
       )
     }
-    if(this.state.page === 'main') {
+    if(view === 'main') {
       return (
         <Container padded='true' className='App'>
           <Container>
