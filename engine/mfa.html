@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=10.000" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="cache-control" content="no-cache,no-store" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+    <meta name='mswebdialog-title' content='Connecting to Daniel Wellington single-sign-on (SSO)' />
+
+    <title>Time-Based One-Time Password Authentication Provider</title>
+
+
+    <link rel="stylesheet" type="text/css" href="/adfs/portal/css/style.css?id=DBC0B4741D4217A138377E7BCC747D0D30B93B979DC99146E4C40167
+85BA8C42" />
+    <style>
+        .illustrationClass {
+            background-image: url(/adfs/portal/illustration/illustration.jpg?id=34410FB736D115CB48D34824D23A53FB0
+98DD02C846DFAA050C72B0D312A8FA3);
+        }
+    </style>
+
+</head>
+
+<body dir="ltr" class="body">
+    <div id="noScript" style="position:static; width:100%; height:100%; z-index:100">
+        <h1>JavaScript required</h1>
+        <p>JavaScript is required. This web browser does not support JavaScript or JavaScript in this web browser is not
+            enabled.</p>
+        <p>To find out if your web browser supports JavaScript or to enable JavaScript, see web browser help.</p>
+    </div>
+    <script type="text/javascript" language="JavaScript">
+        document.getElementById("noScript").style.display = "none";
+    </script>
+    <div id="fullPage">
+        <div id="brandingWrapper" class="float">
+            <div id="branding"></div>
+        </div>
+        <div id="contentWrapper" class="float">
+            <div id="content">
+                <div id="header">
+                    <img class="logoImage"
+                        src="/adfs/portal/logo/logo.png?id=092259092B80C0A5B23829B7B42CEC9A297B04DE63394E9A6552933827DEED26"
+                        alt="Daniel Wellington single-sign-on (SSO)" />
+                </div>
+                <div id="workArea">
+
+                    <div id="authArea" class="groupMargin">
+                        <div class='fieldMargin bigText'>Welcome Jackson Isack Mrema</div>
+                        <div class='groupMargin'>For security reasons, we require additional information to verify your
+                            account</div>
+                        <div class='groupMargin'>
+                            <script type="text/javascript">
+                                function DisableControl(controlId) {
+                                    document.getElementById(controlId).disabled = true;
+                                }
+                            </script>
+                            <div id="loginArea">
+                                <form method="post" id="loginForm">
+                                    <input id="authMethod" type="hidden" name="AuthMethod"
+                                        value="TOTPAuthenticationProvider01" />
+                                    <input id="context" type="hidden" name="Context"
+                                        value="&lt;EncryptedData Type=&quot;http://www.w3.org/2001/04/xmlenc#Content&quot; xmlns=&quot;http://www.w3.org/2001/04/xmlenc#&quot;&gt;&lt;EncryptionMethod Algorithm=&quot;http://www.w3.org/2001/04/xmlenc#aes256-cbc&quot; /&gt;&lt;KeyInfo xmlns=&quot;http://www.w3.org/2000/09/xmldsig#&quot;&gt;&lt;EncryptedKey xmlns=&quot;http://www.w3.org/2001/04/xmlenc#&quot;&gt;&lt;EncryptionMethod Algorithm=&quot;http://www.w3.org/2001/04/xmlenc#rsa-1_5&quot; /&gt;&lt;KeyInfo xmlns=&quot;http://www.w3.org/2000/09/xmldsig#&quot;&gt;&lt;KeyName&gt;1169A0BF7A9C2FD4C3FCAE37ACACA642111AD5D9&lt;/KeyName&gt;&lt;/KeyInfo&gt;&lt;CipherData&gt;&lt;CipherValue&gt;F3pcx4M4L2CqbcI8YHdzbflGRn5+I6MiCzbZU5tdaPu8NlDyfoDbc+RA+pPabKsItIWNSo9P4rs3i1rbuMIy4yd7ZLntK6NzJcdYAE+eqPaisDD0Qbg/wf4SpWqYk1TbaPRebZ2QXpgBDlbDsf11F4+KIm1ZYGKK8x81WH/v4Hkne41fLaamZT/rYqLshVKjfnWIu4LM0xfeh4/PN5vaUo3NT3aH68aO/Pv4Whqj9pwD7YL1Mj6FxSSzaYUhr4PV+G1CReNfy71pBD0fcFT+iOjq3EqAFHFY3AHK+umbRQTsL7kwl08DdHdX0xfhcUL05XTqb7/KbCbHsz/trX3bEg==&lt;/CipherValue&gt;&lt;/CipherData&gt;&lt;/EncryptedKey&gt;&lt;/KeyInfo&gt;&lt;CipherData&gt;&lt;CipherValue&gt;t/FUK188dRW/WAJGX2yCoygbGSEbnWJjpr9TVX/q+WdKVuwXKNFSzCdB5idg2wininfA0t4EVPZw0IrpjjzTb1igqgRQMprCzoz0oQhdDPqRL39xQ0A+xPRNThA7E8xZ4o9KMknG8BV3Ncs2ORLpe2f0b+iVpInW+WtpKyNa2deii7CWNXngXxGEu36uAGiUzVg6hOcegluOv1UygYMo+VhkgiWUrp8cT5qbf2HMWq36gp4vCP4urWR0D6UGePdkLEjgevakCMaySUcg9jXOjbs9CAzTE9XXobfiSaldv+Fd9QmgIGo1MIjxi9EtPNgh2oIPVdkAew36QDiTbgnCcfN/JkQFBER1agy/XvF13auxGEroZO3xGLoHkj7ue6lcMuNS5Apd1nmqtk/7WDSFdYluk4p5xECYmAXbpwA6E29asHo7P1Umg4IUDTGrOYpMGp6Vi1XlwNDzoJLCsQe0O2e48xpAPIH08jpLTndpqlBhGVyc4EBX5aslud3/O1Oom3A/TamPXjo0Sd/O3DHkKLyyYvrzes42VH0Q7CcTnZ2q7ZZjptiFoM7ZPwF+XqPdcYlABtOdKFcqE+iPzE1EOpIqUvNRhJAjFwlfG1CXn/xLovmOGc0SZ8fg5rgtweulgAMhmIxN7daI/OATgMOM5X2h+IQ+QEbKikIBaeUbaVHaRFK/bgANadfTk8oYCAr/uqrXI/WPslHvkRDDSmVOF9QXSj7qasqK0PvXbBYiiUPjJ1yqSb5MqFB8V9yO4ksvbAROjggMUlVOc//6AfCNmGDhId7jECg4ujV/7xAxOBpK1t7u6wYcQlgPJqS4LVkVBuYv4w3GBpDgc17xAa8xBYSzvkZUqK1DDhuCkGidBxrqQ6zLBp3WOH7YbMh1V9sQ&lt;/CipherValue&gt;&lt;/CipherData&gt;&lt;Signature xmlns=&quot;http://www.w3.org/2000/09/xmldsig#&quot;&gt;&lt;SignedInfo&gt;&lt;CanonicalizationMethod Algorithm=&quot;http://www.w3.org/TR/2001/REC-xml-c14n-20010315&quot; /&gt;&lt;SignatureMethod Algorithm=&quot;http://www.w3.org/2000/09/xmldsig#rsa-sha1&quot; /&gt;&lt;Reference URI=&quot;&quot;&gt;&lt;Transforms&gt;&lt;Transform Algorithm=&quot;http://www.w3.org/2000/09/xmldsig#enveloped-signature&quot; /&gt;&lt;/Transforms&gt;&lt;DigestMethod Algorithm=&quot;http://www.w3.org/2000/09/xmldsig#sha1&quot; /&gt;&lt;DigestValue&gt;nfvKzFNn5syS1YR+NcduO5QrDzU=&lt;/DigestValue&gt;&lt;/Reference&gt;&lt;/SignedInfo&gt;&lt;SignatureValue&gt;fXCJM8tiiPXO9Zoud0iGb8xZTyuXUDZYZeH6Kn5zuzFIGoPXBp7XZKSKEsUhkL6Oz5I5g8ztXq7PMjD6fSOoz8FakwYq096hySr+3YJarXZ6dSRxdkFTQJCd482xUOSPJ5/ybM8ndNJyPB7Eg5GgShvZ2yTXZZDkN8pHJE1fIrgTDtlL0OxDjF8R2TTx1NqVZt+9Yz3G5zd5u+ver3O0B5E8mhaRmX7FrO7BAQks4t4omttK1tEYWp9wwoJ8y6HmvxP2/3l+ClmCdUSlCOLWNcU02H0n7DyYCT4JpL83CQPLUDmEyeE0lybRLYlNKQVd85gsHLT0TOMjRKZJl+CVEg==&lt;/SignatureValue&gt;&lt;KeyInfo&gt;&lt;KeyName&gt;1169A0BF7A9C2FD4C3FCAE37ACACA642111AD5D9&lt;/KeyName&gt;&lt;/KeyInfo&gt;&lt;/Signature&gt;&lt;/EncryptedData&gt;" />
+                                    <div id="titleDiv" class="groupMargin">
+                                        <h1 id="sectionHeader">Multi-Factor Authentication</h1>
+                                    </div>
+
+                                    <label for="challengeQuestionInput" class="block">Enter the code generated by your
+                                        authenticator app.</label>
+                                    <input id="challengeQuestionInput" name="ChallengeQuestionAnswer" type="text"
+                                        value="" class="text" placeholder="6-digit code" />
+                                    <div id="submissionArea" class="submitMargin">
+                                        <input id="submitButton" type="submit" name="Submit" value="Submit"
+                                            onclick="DisableButton(this);return AuthPage.submitAnswer()" />
+                                    </div>
+                                </form>
+                                <div id="intro" class="groupMargin">
+                                    <p id="supportEmail">Need support? Contact support@danielwellington.com</p>
+                                </div>
+                                <script type="text/javascript" language="JavaScript">
+                                    //<![CDATA[
+                                    function AuthPage() { }
+                                    AuthPage.submitAnswer = function () { return true; };
+ //]]>
+                                </script>
+                            </div>
+                        </div>
+                        <div id="authOptions">
+                            <form id="options" method="post"
+                                action="https://login.danielwellington.com:443/adfs/ls/idpinitiatedsignon?loginToRP=urn:amazon:webservices">
+                                <script type="text/javascript">
+                                    function SelectOption(option) {
+                                        var i = document.getElementById('optionSelection');
+                                        i.value = option;
+                                        document.forms['options'].submit();
+                                        return false;
+                                    }
+                                </script>
+                                <input id="optionSelection" type="hidden" name="AuthMethod" />
+                                <div class='groupMargin'></div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="footerPlaceholder"></div>
+            </div>
+            <div id="footer">
+                <div id="footerLinks" class="floatReverse">
+                    <div><span id="copyright">&#169; 2013 Microsoft</span><a id="home" class="pageLink"
+                            href="https://login.danielwellington.com/adfs/ls/IdpInitiatedSignOn.aspx">Home</a><a
+                            id="helpDesk" class="pageLink"
+                            href="https://login.danielwellington.com/adfs/portal/updatepassword/">Change Password</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type='text/javascript'>
+        //<![CDATA[
+        // Copyright (c) Microsoft Corporation.  All rights reserved.
+
+        // This file contains several workarounds on inconsistent browser behaviors that administrators may customize.
+        "use strict";
+
+        // iPhone email friendly keyboard does not include "\" key, use regular keyboard instead.
+        // Note change input type does not work on all versions of all browsers.
+        if (navigator.userAgent.match(/iPhone/i) != null) {
+            var emails = document.querySelectorAll("input[type='email']");
+            if (emails) {
+                for (var i = 0; i < emails.length; i++) {
+                    emails[i].type = 'text';
+                }
+            }
+        }
+
+        // In the CSS file we set the ms-viewport to be consistent with the device dimensions, 
+        // which is necessary for correct functionality of immersive IE. 
+        // However, for Windows 8 phone we need to reset the ms-viewport's dimension to its original
+        // values (auto), otherwise the viewport dimensions will be wrong for Windows 8 phone.
+        // Windows 8 phone has agent string 'IEMobile 10.0'
+        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+            var msViewportStyle = document.createElement("style");
+            msViewportStyle.appendChild(
+                document.createTextNode(
+                    "@-ms-viewport{width:auto!important}"
+                )
+            );
+            msViewportStyle.appendChild(
+                document.createTextNode(
+                    "@-ms-viewport{height:auto!important}"
+                )
+            );
+            document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+        }
+
+        // If the innerWidth is defined, use it as the viewport width.
+        if (window.innerWidth && window.outerWidth && window.innerWidth !== window.outerWidth) {
+            var viewport = document.querySelector("meta[name=viewport]");
+            viewport.setAttribute('content', 'width=' + window.innerWidth + 'px; initial-scale=1.0; maximum-scale=1.0');
+        }
+
+        // Gets the current style of a specific property for a specific element.
+        function getStyle(element, styleProp) {
+            var propStyle = null;
+
+            if (element && element.currentStyle) {
+                propStyle = element.currentStyle[styleProp];
+            }
+            else if (element && window.getComputedStyle) {
+                propStyle = document.defaultView.getComputedStyle(element, null).getPropertyValue(styleProp);
+            }
+
+            return propStyle;
+        }
+
+        // The script below is used for downloading the illustration image 
+        // only when the branding is displaying. This script work together
+        // with the code in PageBase.cs that sets the html inline style
+        // containing the class 'illustrationClass' with the background image.
+        var computeLoadIllustration = function () {
+            var branding = document.getElementById("branding");
+            var brandingDisplay = getStyle(branding, "display");
+            var brandingWrapperDisplay = getStyle(document.getElementById("brandingWrapper"), "display");
+
+            if (brandingDisplay && brandingDisplay !== "none" &&
+                brandingWrapperDisplay && brandingWrapperDisplay !== "none") {
+                var newClass = "illustrationClass";
+
+                if (branding.classList && branding.classList.add) {
+                    branding.classList.add(newClass);
+                } else if (branding.className !== undefined) {
+                    branding.className += " " + newClass;
+                }
+                if (window.removeEventListener) {
+                    window.removeEventListener('load', computeLoadIllustration, false);
+                    window.removeEventListener('resize', computeLoadIllustration, false);
+                }
+                else if (window.detachEvent) {
+                    window.detachEvent('onload', computeLoadIllustration);
+                    window.detachEvent('onresize', computeLoadIllustration);
+                }
+            }
+        };
+
+        if (window.addEventListener) {
+            window.addEventListener('resize', computeLoadIllustration, false);
+            window.addEventListener('load', computeLoadIllustration, false);
+        }
+        else if (window.attachEvent) {
+            window.attachEvent('onresize', computeLoadIllustration);
+            window.attachEvent('onload', computeLoadIllustration);
+        }
+        //Custom Code
+        //Customize Exception
+        //Begin
+
+        var domain_hint = "ad.danielwellington.com";
+        var ssoSecondFactorErr = "This trust has been moved to our new ADFS farm";
+        var ssoSecondFactorIsAuthenticated = "You are signed in"
+        var ssoProofupMessage = "This trust has been moved to our new ADFS farm <br><br>You will be automatically redirected in 10 seconds to our new AD FS Farm. <br> All of our services will be moved to this farm so it is recommended that you bookmark the new login page.<br><br>If you are not redirected automatically, please click <a href='{0}'>here</a>."
+        var ssoProofupMessage2 = "If you can't find the trust you are looking for. Please go to our new <a href='{0}'>site</a><br> All services will be moved there soon"
+        var authArea = document.getElementById("authArea");
+        var workArea = document.getElementById("workArea");
+        var loginArea = document.getElementById('loginArea');
+        if (authArea) {
+            var errorMessage = document.getElementById("errorMessage");
+            if (errorMessage.innerHTML.indexOf(ssoSecondFactorErr) >= 0) {
+
+                //Hide the error message
+                var openingMessage = document.getElementById("openingMessage");
+                if (openingMessage) {
+                    openingMessage.style.display = 'none'
+                }
+                var errorDetailsLink = document.getElementById("errorDetailsLink");
+                if (errorDetailsLink) {
+                    errorDetailsLink.style.display = 'none'
+                }
+
+                //Provide a message and redirect to the new SSO Url
+                var ssoRegisterUrl = "https://sso.danielwellington.com/adfs/ls/IdpInitiatedSignOn.aspx";
+                errorMessage.innerHTML = "<br>" + ssoProofupMessage.replace("{0}", ssoRegisterUrl);
+                window.setTimeout(function () { window.location.href = ssoRegisterUrl; }, 10000);
+            }
+        }
+        if (workArea) {
+            var IsAuthenticatedMessage = document.getElementById("idp_SignInThisSiteStatusLabel");
+            if (IsAuthenticatedMessage.innerHTML.indexOf(ssoSecondFactorIsAuthenticated) >= 0) {
+
+                //Provide a message to the new SSO Url
+                var ssoRegisterUrl = "https://sso.danielwellington.com/adfs/ls/IdpInitiatedSignOn.aspx/";
+                IsAuthenticatedMessage.innerHTML = "You are signed in<br>" + ssoProofupMessage2.replace("{0}", ssoRegisterUrl);
+            }
+        }
+//End Customize Exception
+//End Custom Code
+//]]>
+    </script>
+
+
+</body>
+
+</html>
